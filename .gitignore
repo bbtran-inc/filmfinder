@@ -1,0 +1,8 @@
+node_modules/*
+npm-debug.log
+.eslintcache
+.gitattributes
+.github/*
+dist/*
+.vscode/*
+.DS_Store
