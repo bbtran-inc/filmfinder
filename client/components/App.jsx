@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import MovieDetails from '../containers/MovieDetails';
 import Search from '../containers/Search';
 
-export default class App extends Component {
+class App extends Component {
   render() {
     return (
-      <div className="main-container">
-        <div className="app-container-fluid">
-          Hello World in App
+      <div className="container">
+        <div className="container-fluid">
+          <h1>FilmFinder</h1>
           <Search />
-          <MovieDetails />
+          {/* if no movie is present in store then render empty div*/}
+          { this.props.movie.Title === undefined ? <div></div> : <MovieDetails />  }
         </div>
       </div>
     );
   }
 }
 
+function mapStateToProps({ movie }) {
+  return { movie };
+}
+
+export default connect(mapStateToProps)(App);

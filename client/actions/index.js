@@ -6,7 +6,6 @@ export function updateSearchTerm(searchTerm) {
   return { type: UPDATE_SEARCH_TERM, payload: searchTerm };
 }
 
-
 export function searchByTitle(title) {
   const newTitle = title.replace(/[\d\W\s]/g, '+');
   console.log('title:', newTitle);
