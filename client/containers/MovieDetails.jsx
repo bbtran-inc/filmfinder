@@ -2,15 +2,19 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { searchByTitle } from '../actions/index';
 import { TitleBar } from '../components/TitleBar';
+import { Content } from '../components/Content';
 class MovieDetails extends Component {
   render() {
     console.log('movie:', this.props.movie);
     return (
       <div className="movieData-wrapper">
         <div className="movieInfo">
-          <img className="movieImg" alt="" src={this.props.movie.Poster} />
           <div className="titleBar-wrapper">
-            <div className="ratings-wrapper"></div>
+            <div className="ratings-wrapper">
+              <div>
+                Rating: {this.props.movie.imdbRating}
+              </div>
+            </div>
             <TitleBar
               title={this.props.movie.Title}
               rated={this.props.movie.Rated}
@@ -19,8 +23,13 @@ class MovieDetails extends Component {
               released={this.props.movie.Released}
             />
           </div>
-          <div className="mainContent"> Plot: {this.props.movie.Plot} </div>
-          <div> Rating: {this.props.movie.imdbRating} </div>
+          <Content
+            plot={this.props.movie.Plot}
+            director={this.props.movie.Director}
+            poster={this.props.movie.Poster}
+            writer={this.props.movie.Writer}
+            actors={this.props.movie.Actors}
+          />
         </div>
       </div>
     );
