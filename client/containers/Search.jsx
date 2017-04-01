@@ -1,36 +1,56 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { searchByTitle } from '../actions/index';
+import { searchByTitle, updateSearchTerm } from '../actions/index';
 
 class Search extends Component {
   constructor(props) {
     super(props);
-    this.state = { searchTerm: 'logan' };
+    this.handleSearchTermOnChange = this.handleSearchTermOnChange.bind(this);
+    this.handleSearchOnClick = this.handleSearchOnClick.bind(this);
   }
-  componentWillMount() {
-    this.props.searchByTitle(this.state.searchTerm);
+
+  handleSearchTermOnChange(event) {
+    event.preventDefault();
+    this.props.updateSearchTerm(event.target.value);
+  }
+
+  handleSearchOnClick(event) {
+    event.preventDefault();
+    this.props.searchByTitle(this.props.searchTerm);
   }
 
   render() {
     return (
       <div>
-        <input
-        placeholder="Search By Movive Title"
-        value={this.state.searchTerm}
-        type='text' />
-        <span className='input-group-btn'>
-          <button type="submit" className="btn btn-primary">
-          Submit
-          </button>
-        </span>
+        <form onSubmit={this.handleSearchOnClick}>
+          <input
+            placeholder="Search By Movive Title"
+            onChange={this.handleSearchTermOnChange}
+            value={this.props.searchTerm}
+            type="text"
+          />
+          <span className="input-group-btn">
+            <button
+              type="submit"
+              className="btn btn-primary"
+              onClick={this.handleSearchOnClick}
+            >
+            Submit
+            </button>
+          </span>
+        </form>
       </div>
     );
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ searchByTitle }, dispatch);
+function mapStateToProps({ searchTerm }) {
+  return { searchTerm };
 }
 
-export default connect(null, mapDispatchToProps)(Search);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ searchByTitle, updateSearchTerm }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Search);
