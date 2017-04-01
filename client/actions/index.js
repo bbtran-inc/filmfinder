@@ -1,12 +1,14 @@
 import axios from 'axios';
 
-const FETCH_MOIVE = 'FETCH_MOVIE';
+export const FETCH_MOVIE = 'FETCH_MOVIE';
 
 export function searchByTitle(title) {
-  const request = axios.get(`http://www.omdbapi.com/?t=${title}`);
+  const url = `http://www.omdbapi.com/?t=${title}`;
+  console.log(url);
+  const request = axios.get(url);
   return (dispatch) => {
     request.then(({ data }) => {
-      dispatch({ type: FETCH_MOIVE, payload: data });
+      dispatch({ type: FETCH_MOVIE, payload: data });
     });
   };
 }

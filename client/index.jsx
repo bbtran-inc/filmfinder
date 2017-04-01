@@ -15,9 +15,10 @@ document.getElementById('main'));
 
 if (module.hot) {
   module.hot.accept('./containers/Root', () => {
+    const NextRoot = require('./containers/Root').default;
     ReactDOM.render(
     <AppContainer>
-      <Root store={store} />
+      <NextRoot store={store} />
     </AppContainer>,
     document.getElementById('main'));
   });

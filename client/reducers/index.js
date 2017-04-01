@@ -1,18 +1,11 @@
 import { combineReducers } from 'redux';
 import { FETCH_MOVIE } from '../actions/index';
 
-
-
-// const updateMovie = (state, action) => {
-//   const newDetails = {};
-//   Object.assign(newDetails, state, )
-// };
-
-function moviesReducer(state = {}, action) {
+export function moviesReducer(state = {}, action) {
+  console.log('action:', action.payload);
   switch (action.type) {
   case FETCH_MOVIE:
-    console.log('state', action.payload);
-    return action.payload || state;
+    return action.payload;
   default:
     return state;
   }
