@@ -25,7 +25,7 @@ class Search extends Component {
       <div>
         <form onSubmit={this.handleSearchOnClick}>
           <input
-            placeholder="Search By Movive Title"
+            placeholder="Search By Movie Title"
             onChange={this.handleSearchTermOnChange}
             value={this.props.searchTerm}
             type="text"
