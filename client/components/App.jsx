@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MovieDetails from '../containers/MovieDetails';
 import Search from '../containers/Search';
+import FavoritesList from '../containers/FavoritesList';
 
 class App extends Component {
   render() {
@@ -11,7 +12,8 @@ class App extends Component {
           <h1>FilmFinder</h1>
           <Search />
           {/* if no movie is present in store then render empty div*/}
-          { this.props.movie.Title === undefined ? <div></div> : <MovieDetails />  }
+          { this.props.movie.Title === undefined ? <div></div> : <MovieDetails /> }
+          <FavoritesList />
         </div>
       </div>
     );
