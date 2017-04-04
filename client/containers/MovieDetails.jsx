@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../actions';
+import * as actions from '../actions'; // import all methods from index directory
 import { TitleBar } from '../components/TitleBar';
 import { Content } from '../components/Content';
 class MovieDetails extends Component {
@@ -9,7 +9,31 @@ class MovieDetails extends Component {
     this.handleCheckBox = this.handleCheckBox.bind(this);
   }
 
+  componentWillMount() {
+    if (this.props.movie.Response === 'True') {
+      this.props.setRecentSearch(this.props.searchTerm);
+    } else {
+      console.log('INVALID SEARCH: Not Stored to Recent Searches');
+    }
+  }
+
+  componentDidMount() {
+    this.checkFavoritesState();
+  }
+
   componentDidUpdate() {
+    this.checkFavoritesState();
+  }
+  componentWillReceiveProps (nextProps) {
+    console.log('nextProps:', nextProps);
+    if (nextProps.movie.Response === 'True' && this.props.movie.imdbID !== nextProps.movie.imdbID) {
+      this.props.setRecentSearch(this.props.searchTerm);
+    } else {
+      console.log('INVALID SEARCH: Not Stored to Recent Searches');
+    }
+  }
+
+  checkFavoritesState() {
     const { Title, imdbID, Poster, Rated } = this.props.movie;
     const { favoritesList } = this.props;
     if (favoritesList.hasOwnProperty(Title)) {
@@ -18,7 +42,6 @@ class MovieDetails extends Component {
       document.getElementById('favorite-checkbox').checked = false;
     }
   }
-
   handleCheckBox() {
     const { Title, imdbID, Poster, Rated } = this.props.movie;
     const checked = document.getElementById('favorite-checkbox').checked;
@@ -61,8 +84,8 @@ class MovieDetails extends Component {
   }
 }
 
-function mapStateToProps({ movie, favoritesList }) {
-  return { movie, favoritesList };
+function mapStateToProps({ movie, favoritesList, searchTerm }) {
+  return { movie, favoritesList, searchTerm };
 }
 
 export default connect(mapStateToProps, actions)(MovieDetails);

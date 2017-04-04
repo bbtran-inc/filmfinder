@@ -11,8 +11,10 @@ export default function configureStore() {
   /* eslint-enable */
 
   store.subscribe(() => {
+    // only make sure to store the favorites list and nothing that has to do with UI state
     saveState({
       favoritesList: store.getState().favoritesList,
+      recentSearches: store.getState().recentSearches,
     });
   });
 

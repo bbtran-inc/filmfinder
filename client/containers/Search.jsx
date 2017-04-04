@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { searchByTitle, updateSearchTerm } from '../actions/index';
+import * as actions from '../actions/index';
 
 class Search extends Component {
   constructor(props) {
@@ -45,12 +45,8 @@ class Search extends Component {
   }
 }
 
-function mapStateToProps({ searchTerm }) {
-  return { searchTerm };
+function mapStateToProps({ searchTerm, recentSearches }) {
+  return { searchTerm, recentSearches };
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ searchByTitle, updateSearchTerm }, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+export default connect(mapStateToProps, actions)(Search);

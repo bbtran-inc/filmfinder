@@ -3,6 +3,7 @@ export const FETCH_MOVIE = 'FETCH_MOVIE';
 export const UPDATE_SEARCH_TERM = 'UPDATE_SEARCH_TERM';
 export const SET_FAVORITE = 'SET_FAVORITE';
 export const REMOVE_FAVORITE = 'REMOVE_FAVORITE';
+export const STORE_RECENT = 'STORE_RECENT';
 
 export function updateSearchTerm(searchTerm) {
   return { type: UPDATE_SEARCH_TERM, payload: searchTerm };
@@ -29,4 +30,8 @@ export function setFavorite(title, imdbID, poster, rated) {
 
 export function removeFavorite(title) {
   return { type: REMOVE_FAVORITE, payload: title };
+}
+
+export function setRecentSearch(string) {
+  return { type: STORE_RECENT, payload: string };
 }
