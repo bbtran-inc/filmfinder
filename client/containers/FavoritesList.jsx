@@ -9,11 +9,11 @@ class FavoritesList extends Component {
       <FavoritedMovie title={favItem} poster={favoritesList[favItem].poster} />
     ));
   return (
-      <div className="favorites-container">
+      <div className="favorites-container contianer">
         <header className="favorites-header">
           <h2>Your Saved Favorites</h2>
         </header>
-        <div className="favorites">
+        <div className="favorites-wrap">
           {movieList}
         </div>
       </div>

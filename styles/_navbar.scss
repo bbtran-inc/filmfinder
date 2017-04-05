@@ -1,0 +1,39 @@
+.navbar {
+  background-color: $base-secondary;
+}
+.navbar-item {
+  border: 2px solid $base-secondary;
+  float: right;
+    @include border-radius(5px);
+}
+.navbar-button {
+  color: $base-primary;
+  border: 1px solid $base-primary;
+  box-shadow: none;
+  background-color: $base-secondary;
+    @include border-radius(5px);
+    &:hover {
+      background-color: $base-background;
+    }
+    &:focus {
+      outline: none;
+    }
+}
+.navbar-list {
+  display: inline;
+}
+.navbar-header {
+  width:100%;
+  padding-top: 10px;
+  h1{
+    display: inline-block;
+    margin-left: 1em;
+    font-size: 30px;
+  }
+  a {
+    color: $base-primary;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}

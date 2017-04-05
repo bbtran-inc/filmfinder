@@ -1,0 +1,119 @@
+input, .search-input, .btn {
+  &:focus {
+    outline: none !important;
+  }
+}
+a {
+  color: #1e7ad3;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+input {
+  font-size: 14px;
+  color: #555860;
+}
+
+.search {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  button {
+    height: 28px !important;
+  }
+  input {
+    height: 28px;
+    width: 100%;
+    padding: 0 12px 0 25px;
+    background: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #a8acbc #babdcc #c0c3d2;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: inset 0 1px #e5e7ed, 0 1px 0 #fcfcfc;
+    &:focus {
+      outline: none;
+      border-color: #9E9E9E;
+    }
+  }
+  input:focus + span +.results {
+    display: block;
+  }
+  .results {
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #cbcfe2;
+    border-radius: 3px;
+    background-color: #fdfdfd;
+    li {
+      display: block;
+      &:first-child {
+        margin-top: -1px;
+        &:before, &:after {
+          display: block;
+          // content: '';
+          width: 0;
+          height: 0;
+          position: absolute;
+          left: 50%;
+          margin-left: -5px;
+          border: 5px outset transparent;
+        }
+        &:before {
+          border-bottom: 5px solid #c4c7d7;
+          top: -11px;
+        }
+        &:after {
+          border-bottom: 5px solid #fdfdfd;
+          top: -10px;
+        }
+        &:hover {
+          &:before, &:after {
+            display: none;
+          }
+        }
+      }
+      &:last-child {
+        margin-bottom: -1px;
+      }
+    }
+    a {
+      text-decoration: none;
+      display: block;
+      position: relative;
+      margin: 0 -1px;
+      padding: 6px 40px 6px 10px;
+      color: #808394;
+      font-weight: normal;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      span {
+        font-weight: 200;
+      }
+      &:before {
+        // content: '';
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        margin-top: -9px;
+      }
+      &:hover {
+        text-decoration: none;
+        color: #fff;
+        background-color: #d4d4d4;
+        background-image: linear-gradient(top, #d4d4d4, #808080);
+      }
+    }
+  }
+}

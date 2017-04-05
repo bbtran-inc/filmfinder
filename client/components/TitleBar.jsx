@@ -4,23 +4,23 @@ import React from 'react';
 export const TitleBar = (props) => {
   return (
     <div className="titleBar">
-      <div className="favorite"></div>
       <div className="title-wrapper">
         <h3 className="title-header">{props.title}</h3>
-        <div className="subtext-wrapper">
-          <ul className="subtext-list">
-            <li className="subtext-list-item">{props.rated}</li>
-            <li className="subtext-list-item">{props.runtime}</li>
-            <li className="subtext-list-item">{props.genre}</li>
-            <li className="subtext-list-item">{props.released}</li>
-          </ul>
-        </div>
+      </div>
+      <div className="subtext-wrapper">
+        <ul className="subtext-list">
+          <li className="subtext-list-item"><strong>IMDB Rating:</strong> &nbsp; {props.rating} | &nbsp;</li>
+          <li className="subtext-list-item"><strong>Rated:</strong> &nbsp; {props.rated} | &nbsp;</li>
+          <li className="subtext-list-item"><strong>Runtime:</strong> &nbsp; {props.runtime} | &nbsp;</li>
+          <li className="subtext-list-item"><strong>Genre:</strong> &nbsp; {props.genre} | &nbsp;</li>
+          <li className="subtext-list-item"><strong>Release Date:</strong> &nbsp; {props.released}</li>
+        </ul>
       </div>
     </div>
   );
 };
-
 TitleBar.propTypes = {
+  rating: React.PropTypes.string,
   title: React.PropTypes.string,
   rated: React.PropTypes.string,
   runtime: React.PropTypes.string,

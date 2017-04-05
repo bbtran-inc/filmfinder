@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import RecentSearchList from './RecentSearchList';
 import * as actions from '../actions/index';
 
 class Search extends Component {
@@ -22,22 +23,24 @@ class Search extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSearchOnClick}>
+        <form className="search input-group" onSubmit={this.handleSearchOnClick}>
           <input
             placeholder="Search By Movie Title"
             onChange={this.handleSearchTermOnChange}
             value={this.props.searchTerm}
             type="text"
+            className="search-input form-control"
           />
           <span className="input-group-btn">
             <button
               type="submit"
-              className="btn btn-primary"
+              className="btn btn-default"
               onClick={this.handleSearchOnClick}
             >
-            Submit
+            Search
             </button>
           </span>
+          <RecentSearchList />
         </form>
       </div>
     );

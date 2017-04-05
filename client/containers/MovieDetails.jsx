@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions'; // import all methods from index directory
 import { TitleBar } from '../components/TitleBar';
@@ -55,13 +55,11 @@ class MovieDetails extends Component {
       <div className="movieData-wrapper">
         <div className="movieInfo">
           <div className="titleBar-wrapper">
-            <input type="checkbox" id="favorite-checkbox" value="favorite" onChange={this.handleCheckBox} />
-            <div className="ratings-wrapper">
-              <div>
-                Rating: {this.props.movie.imdbRating}
-              </div>
+            <div className="favorite">
+              <input type="checkbox" id="favorite-checkbox" value="favorite" className="glyphicon glyphicon-star-empty" onChange={this.handleCheckBox} />
             </div>
             <TitleBar
+              rating={this.props.movie.imdbRating}
               title={this.props.movie.Title}
               rated={this.props.movie.Rated}
               runtime={this.props.movie.Runtime}

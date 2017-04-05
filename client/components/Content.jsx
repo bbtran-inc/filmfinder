@@ -12,13 +12,13 @@ export const Content = (props) => {
             {props.plot}
           </div>
           <div className="plotSummary-item">
-            <h4 className="inline-strong">Director:</h4> {props.director}
+            <h4 className="inline-strong">Director: &nbsp;</h4><span>{props.director}</span>
           </div>
           <div className="plotSummary-item">
-            <h4 className="inline-strong">Writer:</h4> {props.writer}
+            <h4 className="inline-strong">Writer: &nbsp;</h4><span>{props.writer}</span>
           </div>
           <div className="plotSummary-item">
-            <h4 className="inline-strong">Cast:</h4> {props.actors}
+            <h4 className="inline-strong">Cast: &nbsp;</h4><span>{props.actors}</span>
           </div>
         </div>
       </div>

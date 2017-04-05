@@ -1,0 +1,57 @@
+.titleBar-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100px;
+  flex-wrap: wrap;
+  .favorite {
+    font-size: 40px;
+    .glyphicon:before {
+      font-size: 40px;
+      visibility: visible;
+    }
+    .glyphicon.glyphicon-star-empty:checked:before {
+      font-size: 40px;
+      content: "\e006";
+      color: gold;
+    }
+    input[type=checkbox].glyphicon {
+      visibility: hidden;
+    }
+  }
+}
+.titleBar {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.title-wrapper  {
+  height: 100%;
+  margin: 10px;
+  width: 100%;
+  text-align: center;
+  .title-header {
+    font-size: 30px;
+  }
+}
+.ratings-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.subtext-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.subtext-list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.subtext-list-item {
+  font-size: 16px;
+}

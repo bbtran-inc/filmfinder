@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import MovieDetails from '../containers/MovieDetails';
-import Search from '../containers/Search';
-import FavoritesList from '../containers/FavoritesList';
+import MovieDetails from './MovieDetails';
+import Search from './Search';
+import FavoritesList from './FavoritesList';
 import * as actions from '../actions';
+import '../../styles/base.scss';
 
 class App extends Component {
   constructor(props) {
@@ -26,25 +27,25 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <div className="container-fluid">
-          <nav className="navbar navbar-default">
+        <nav className="navbar navbar-default">
+          <div className="container-fluid">
             <div className="navbar-header">
               <a href="/" onClick={this.reset}><h1>FilmFinder</h1></a>
               <div className="navbar-list">
                 <div className="navbar-item">
-                  <button className="navbar-button" id="MovieSearch" onClick={this.selectViews}>Movie Search</button>
+                  <button className="btn navbar-button" id="MovieSearch" onClick={this.selectViews}>Movie Search</button>
                 </div>
                 <div className="navbar-item">
-                  <button className="navbar-button" id="Favorites" onClick={this.selectViews}>Favorites</button>
+                  <button className="btn navbar-button" id="Favorites" onClick={this.selectViews}>Favorites</button>
                 </div>
               </div>
             </div>
-          </nav>
-          { this.state.tab === 'MovieSearch' ? <Search /> : <div></div> }
-          {/* if no movie is present in store then render empty div*/}
-          { this.state.tab === 'MovieSearch' && this.props.movie.Title !== undefined ? <MovieDetails /> : <div></div> }
-          { this.state.tab === 'Favorites' ? <FavoritesList /> : <div></div> }
-        </div>
+          </div>
+        </nav>
+        { this.state.tab === 'MovieSearch' ? <Search /> : <div></div> }
+        {/* if no movie is present in store then render empty div*/}
+        { this.state.tab === 'MovieSearch' && this.props.movie.Title !== undefined ? <MovieDetails /> : <div></div> }
+        { this.state.tab === 'Favorites' ? <FavoritesList /> : <div></div> }
       </div>
     );
   }
