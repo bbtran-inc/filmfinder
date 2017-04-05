@@ -4,6 +4,8 @@ export const UPDATE_SEARCH_TERM = 'UPDATE_SEARCH_TERM';
 export const SET_FAVORITE = 'SET_FAVORITE';
 export const REMOVE_FAVORITE = 'REMOVE_FAVORITE';
 export const STORE_RECENT = 'STORE_RECENT';
+export const CLEAR_MOVIE = 'CLEAR_MOVIE';
+export const CLEAR_SEARCH_TERM = 'CLEAR_SEARCH_TERM';
 
 export function updateSearchTerm(searchTerm) {
   return { type: UPDATE_SEARCH_TERM, payload: searchTerm };
@@ -34,4 +36,12 @@ export function removeFavorite(title) {
 
 export function setRecentSearch(string) {
   return { type: STORE_RECENT, payload: string };
+}
+
+export function clearSearchTerm() {
+  return { type: CLEAR_SEARCH_TERM };
+}
+
+export function clearMovie() {
+  return { type: CLEAR_MOVIE };
 }

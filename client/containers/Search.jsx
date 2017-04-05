@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/index';
 
@@ -47,5 +47,11 @@ class Search extends Component {
 function mapStateToProps({ searchTerm, recentSearches }) {
   return { searchTerm, recentSearches };
 }
+
+Search.propTypes = {
+  searchTerm: React.PropTypes.string,
+  searchByTitle: React.PropTypes.func,
+  updateSearchTerm: React.PropTypes.func,
+};
 
 export default connect(mapStateToProps, actions)(Search);

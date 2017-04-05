@@ -7,8 +7,7 @@
     "start": "NODE_ENV=production node index.js",
     "clean": "rimraf dist",
     "build": "NODE_ENV=production npm run clean && webpack -p --config ./webpack.prod.config.js",
-    "dev": "webpack-dev-server",
-    "test": "mocha"
+    "dev": "webpack-dev-server"
   },
   "engines": {
     "node": "6.1.0"

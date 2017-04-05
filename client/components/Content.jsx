@@ -24,4 +24,12 @@ export const Content = (props) => {
       </div>
     </div>
   );
-}
+};
+
+Content.propTypes = {
+  poster: React.PropTypes.string,
+  plot: React.PropTypes.string,
+  director: React.PropTypes.string,
+  writer: React.PropTypes.string,
+  actors: React.PropTypes.string,
+};

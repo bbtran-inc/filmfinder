@@ -26,7 +26,7 @@ function mapStateToProps({ favoritesList }) {
 }
 
 FavoritesList.propTypes = {
-  favoritesList: React.PropTypes.array,
+  favoritesList: React.PropTypes.object,
 };
 
 export default connect(mapStateToProps)(FavoritesList);

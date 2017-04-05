@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import { connect } from 'react-redux';
 
 export const TitleBar = (props) => {
@@ -18,4 +18,12 @@ export const TitleBar = (props) => {
       </div>
     </div>
   );
-}
+};
+
+TitleBar.propTypes = {
+  title: React.PropTypes.string,
+  rated: React.PropTypes.string,
+  runtime: React.PropTypes.string,
+  genre: React.PropTypes.string,
+  released: React.PropTypes.string,
+};

@@ -5,8 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const PATHS = {
   app: path.resolve(__dirname, './client'),
   dist: path.resolve(__dirname, './dist'),
-  style: [path.resolve(__dirname, './client/styles')],
-  vendor: path.resolve(__dirname, './vendor.jsx'),
+  style: [path.resolve(__dirname, './styles')],
 };
 
 const VENDOR_LIBS = ['react-hot-loader/patch', 'lodash', 'react', 'react-dom', 'redux', 'react-router', 'react-router-bootstrap', 'react-redux', 'react-router-redux'];
@@ -30,6 +29,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
+        include: PATHS.style,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],

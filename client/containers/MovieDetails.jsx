@@ -20,11 +20,7 @@ class MovieDetails extends Component {
   componentDidMount() {
     this.checkFavoritesState();
   }
-
-  componentDidUpdate() {
-    this.checkFavoritesState();
-  }
-  componentWillReceiveProps (nextProps) {
+  componentWillReceiveProps(nextProps) {
     console.log('nextProps:', nextProps);
     if (nextProps.movie.Response === 'True' && this.props.movie.imdbID !== nextProps.movie.imdbID) {
       this.props.setRecentSearch(this.props.searchTerm);
@@ -32,9 +28,11 @@ class MovieDetails extends Component {
       console.log('INVALID SEARCH: Not Stored to Recent Searches');
     }
   }
-
+  componentDidUpdate() {
+    this.checkFavoritesState();
+  }
   checkFavoritesState() {
-    const { Title, imdbID, Poster, Rated } = this.props.movie;
+    const { Title } = this.props.movie;
     const { favoritesList } = this.props;
     if (favoritesList.hasOwnProperty(Title)) {
       document.getElementById('favorite-checkbox').checked = true;
@@ -87,5 +85,14 @@ class MovieDetails extends Component {
 function mapStateToProps({ movie, favoritesList, searchTerm }) {
   return { movie, favoritesList, searchTerm };
 }
+
+MovieDetails.propTypes = {
+  favoritesList: React.PropTypes.object,
+  movie: React.PropTypes.object,
+  setFavorite: React.PropTypes.func,
+  searchTerm: React.PropTypes.string,
+  setRecentSearch: React.PropTypes.func,
+  removeFavorite: React.PropTypes.func,
+};
 
 export default connect(mapStateToProps, actions)(MovieDetails);
