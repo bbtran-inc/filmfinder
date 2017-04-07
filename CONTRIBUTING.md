@@ -1,7 +1,7 @@
 
 # Contributing to FilmFinder
 
-Hello! Please read the following contributing to the app!
+Hello! Please read the following before contributing to the app!
 
 # Git Workflow
 
