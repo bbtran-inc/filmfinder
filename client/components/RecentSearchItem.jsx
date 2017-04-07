@@ -2,7 +2,7 @@ import React from 'react';
 
 export const RecentSearchItem = (props) => {
   return (
-    <li onClick={props.onSomeEvent}><a href="/"><span>{props.searchPhrase}</span></a></li>
+    <li><a href="/" onClick={() => console.log('hello')}><span>{props.searchPhrase}</span></a></li>
   );
 };
 

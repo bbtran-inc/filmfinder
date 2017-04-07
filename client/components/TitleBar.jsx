@@ -19,6 +19,7 @@ export const TitleBar = (props) => {
     </div>
   );
 };
+
 TitleBar.propTypes = {
   rating: React.PropTypes.string,
   title: React.PropTypes.string,

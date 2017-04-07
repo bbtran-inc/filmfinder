@@ -9,9 +9,8 @@ class RecentSearchList extends Component {
   }
   render() {
     const resultList = this.props.recentSearches.map((item) => {
-      return <RecentSearchItem searchPhrase={item} onSomeEvent={() => handleEvent(item)} />;
+      return <RecentSearchItem searchPhrase={item} onSomeEvent={() => console.log('hello')} />;
     }, this);
-
     return (
       <ul className="results">
         <li><a href="/"><span>YOUR RECENT SEARCHES</span></a></li>
