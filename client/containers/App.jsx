@@ -27,17 +27,17 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <nav className="navbar navbar-default">
+        <nav className="navbar">
           <div className="container-fluid">
             <div className="navbar-header">
               <a href="/" onClick={this.reset}><h1>FilmFinder</h1></a>
-              <div className="navbar-list">
-                <div className="navbar-item">
-                  <button className="btn navbar-button" id="MovieSearch" onClick={this.selectViews}>Movie Search</button>
-                </div>
-                <div className="navbar-item">
-                  <button className="btn navbar-button" id="Favorites" onClick={this.selectViews}>Favorites</button>
-                </div>
+            </div>
+            <div className="navbar-list">
+              <div className="navbar-item">
+                <button className="btn navbar-button" id="MovieSearch" onClick={this.selectViews}>Movie Search</button>
+              </div>
+              <div className="navbar-item">
+                <button className="btn navbar-button" id="Favorites" onClick={this.selectViews}>Favorites</button>
               </div>
             </div>
           </div>

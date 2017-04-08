@@ -5,6 +5,7 @@ import { RecentSearchItem } from '../components/RecentSearchItem';
 
 class RecentSearchList extends Component {
   handleEvent(item) {
+    console.log('hello');
     this.props.searchByTitle(item);
   }
   render() {

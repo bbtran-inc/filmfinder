@@ -22,7 +22,7 @@ class Search extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container-fluid">
         <form className="search input-group" onSubmit={this.handleSearchOnClick}>
           <input
             placeholder="Search By Movie Title"
