@@ -103,5 +103,8 @@
         display: block;
       }
     }
+    @include mobile {
+      width: 100%;
+    }
   }
 }
