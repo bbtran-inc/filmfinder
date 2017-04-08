@@ -22,24 +22,22 @@ class Search extends Component {
 
   render() {
     return (
-      <div className="container-fluid">
-        <form className="search input-group" onSubmit={this.handleSearchOnClick}>
+      <div className="search-container">
+        <form className="search" onSubmit={this.handleSearchOnClick}>
           <input
             placeholder="Search By Movie Title"
             onChange={this.handleSearchTermOnChange}
             value={this.props.searchTerm}
             type="text"
-            className="search-input form-control"
+            className="search-input"
           />
-          <span className="input-group-btn">
-            <button
-              type="submit"
-              className="btn btn-default"
-              onClick={this.handleSearchOnClick}
-            >
-            Search
-            </button>
-          </span>
+          <button
+            type="submit"
+            className="search-button"
+            onClick={this.handleSearchOnClick}
+          >
+          GO!
+          </button>
           <RecentSearchList />
         </form>
       </div>
