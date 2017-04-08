@@ -9,11 +9,16 @@ It's always challenging to find something new to watch. Whether it's at the movi
 ## Version 1.0.0
 * This current version of FilmFinder utilizes localStoage to store user favorites and recent searches. Redux allows us to easily subscribe to the localStorage allowing us to check for any previous state upon refreshing the page. While this is effective for individual users, the data can easily be lost if users were to clear their cache.
 
-### Upcoming changes for Version 2
+![Alt text](images/FavoritesList.png "FilmFinder")
+
+## Version 2.0.0
 * Fixes to recent searches dropdown. Remove bug on click handler inside of RecentSearchList container.
-* Integrate React Router to more of a multi-page app instead of a SPA. Utilize page links.
-* More styling changes
+* Mobile responsiveness for tables and phones
+
+![Alt text](images/FavoritesListv2.png "FilmFinder v2")
+
 ### Future updates
+* Integrate React Router to more of a multi-page app instead of a SPA. Utilize page links.
 * Include user login and authentication
 * Add database to store user data instead of localStorage
 
