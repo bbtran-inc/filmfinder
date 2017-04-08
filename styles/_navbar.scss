@@ -13,14 +13,17 @@
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     .navbar-header {
       width: 50%;
       display: flex;
       justify-content: flex-start;
       align-items: center;
       h1{
-        display: inline-block;
         font-size: 45px;
+        @include mobile {
+          font-size: 40px;
+        }
       }
       a {
         color: $base-primary;
@@ -28,6 +31,10 @@
           text-decoration: none;
           color: $base-secondary;
         }
+      }
+      @include mobile {
+        justify-content: center;
+        width: 100%;
       }
     }
     .navbar-list {
@@ -41,20 +48,40 @@
         .navbar-button {
           margin: 0 5px;
           color: $base-primary;
-          border-bottom: 1px solid $base-secondary;
-          border-top: 1px solid $base-secondary;
-          box-shadow: none;
-          @include border-radius(0);
+          border-bottom: 2px solid $base-primary;
+          border-top: 2px solid $base-primary;
           font-size: 20px;
+          font-weight: 500;
           background-color: #000000;
+          @include border-radius(0);
           &:hover {
             color: $base-secondary;
+            border-top-color: $base-secondary;
+            border-bottom-color: $base-secondary;
           }
           &:focus {
             outline: none;
           }
+          @include mobile {
+            font-size: 14px;
+            line-height: 1;
+            padding: 3px 6px;
+          }
         }
       }
+      @include mobile {
+        width: 100%;
+        justify-content: center;
+      }
     }
+    @include mobile {
+      justify-content: center;
+      flex-flow: row wrap;
+    }
+  }
+  @include mobile {
+    height: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }

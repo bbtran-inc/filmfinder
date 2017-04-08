@@ -34,10 +34,10 @@ body, html {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background: $base-background;
-  background: -webkit-linear-gradient($base-background, #F5D400); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient($base-background, #F5D400); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient($base-background, #F5D400); /* For Firefox 3.6 to 15 */
-  background: linear-gradient($base-background, #F5D400); /* Standard syntax */
+  background: -webkit-linear-gradient($base-background, $base-primary); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($base-background, $base-primary); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($base-background, $base-primary); /* For Firefox 3.6 to 15 */
+  background: linear-gradient($base-background, $base-primary); /* Standard syntax */
 }
 
 .container {
