@@ -1,4 +1,5 @@
 .titleBar-wrapper {
+  background: $base-background;
   display: flex;
   width: 100%;
   justify-content: flex-start;
@@ -20,38 +21,65 @@
       visibility: hidden;
     }
   }
-}
-.titleBar {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.title-wrapper  {
-  height: 100%;
-  margin: 10px;
-  width: 100%;
-  text-align: center;
-  .title-header {
-    font-size: 30px;
+  .titleBar {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    .title-wrapper  {
+      height: 100%;
+      margin: 10px;
+      width: 100%;
+      text-align: center;
+      .title-header {
+        font-size: 30px;
+      }
+    }
+    .subtext-wrapper {
+      margin-bottom: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .subtext-list {
+        border: 2px solid $base-primary;
+        background-color: $base-secondary;
+        width: 100%;
+        padding: 4px;
+        display: flex;
+        justify-content: center;
+        @include border-radius(3px);
+        .subtext-list-item {
+          border: 1px solid $base-primary;
+          padding: 4px;
+          margin: 2px;
+          display: flex;
+          width:20%;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: flex-start;
+          @include border-radius(3px);
+          span {
+            text-align: center;
+            font-size: 12px;
+            @include mobile {
+              font-size: 10px;
+            }
+          }
+          .subtext-list-item-header {
+            text-align: center;
+            text-decoration: underline;
+            width: 100%;
+            font-size: 14px;
+            @include mobile {
+              font-size: 11px;
+            }
+          }
+        }
+      }
+    }
+    @include mobile {
+      margin-bottom: 10%;
+    }
   }
-}
-.ratings-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-.subtext-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.subtext-list {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-}
-.subtext-list-item {
-  font-size: 16px;
 }

@@ -3,17 +3,29 @@
 }
 
 .mainContentWithPoster {
-  margin-top: 15px;
+  margin-top: 30px;
+  padding-top: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   .movieImg-wrapper {
     width:30%;
-    border: 2px solid $base-primary;
     display: flex;
-    .movieImg {
+    justify-content: center;
+    align-items: center;
+    @include mobile {
+      margin-top: 5%;
       width: 100%;
       height: 100%;
+    }
+    .movieImg {
+      border: 2px solid $base-primary;
+      width: 100%;
+      height: 100%;
+      @include mobile {
+        width: 60%;
+        height: 60%;
+      }
     }
   }
   .plotSummary-wrapper {
@@ -31,6 +43,9 @@
         display: inline;
         font-weight: 600;
       }
+    }
+    @include mobile {
+      width:100%;
     }
   }
 
