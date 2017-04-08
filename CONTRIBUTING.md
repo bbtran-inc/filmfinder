@@ -46,6 +46,7 @@ $ git push origin master
     * [ FIRE ] - when removing code or files
     * [ DEV ] - when changing dependencies or configuring Webpack
     * [ FEAT ] - when changing/adding features
+    * [ STYLE ] - when changing styles
 * Commit frequently to avoid chaining together commits (Try not to do this: ```[ REFACTOR | BUGFIX | DEV ]``` )
 
 ### Multiline Commits
