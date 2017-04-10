@@ -12,5 +12,6 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    @include border-radius(5px);
   }
 }
