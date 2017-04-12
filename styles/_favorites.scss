@@ -18,12 +18,15 @@
 .favorites-card {
   background: $base-background-lighter;
   margin: 10px 5px;
+  padding-top: 7px;
+  @include border-radius(8px);
 }
 
 .favorites-card-header {
   display: block;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 17px;
+  font-weight: 550;
+  padding: 0 5px;
   text-align: center;
 }
 
